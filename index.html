@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Drawing App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/pressure@2.0.1/dist/pressure.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Tools Panel -->
+        <div class="tools-panel glass">
+            <div class="tool-group">
+                <h3>Brushes</h3>
+                <div class="brush-types">
+                    <button class="btn active" data-brush="round">🖌️ Round</button>
+                    <button class="btn" data-brush="square">⬜ Square</button>
+                    <button class="btn" data-brush="spray">💨 Spray</button>
+                    <button class="btn" data-brush="eraser">🧹 Eraser</button>
+                </div>
+            </div>
+
+            <div class="tool-group">
+                <h3>Color</h3>
+                <input type="color" id="colorPicker" value="#ff4757">
+            </div>
+
+            <div class="tool-group">
+                <h3>Size <span id="brushSizeValue">5</span></h3>
+                <input type="range" id="brushSize" min="1" max="100" value="5">
+            </div>
+
+            <div class="tool-group">
+                <h3>Layers</h3>
+                <div class="layer-controls">
+                    <button id="newLayer" class="btn">+ New Layer</button>
+                    <div id="layerList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Canvas Area -->
+        <div class="canvas-container glass">
+            <canvas id="mainCanvas"></canvas>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="undoBtn" class="btn glass">↩ Undo</button>
+            <button id="redoBtn" class="btn glass">↪ Redo</button>
+            <button id="saveBtn" class="btn glass">💾 Save</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
